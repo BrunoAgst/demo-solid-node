@@ -16,8 +16,7 @@ class UserMemoryRepository {
     }
 
     async get(email){
-        const user = this.users.find(user =>  user.email === email);
-        return user;
+        return this.users.find(user =>  user.email === email);
     }
 }
 

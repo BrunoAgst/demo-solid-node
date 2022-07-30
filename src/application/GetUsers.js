@@ -1,11 +1,13 @@
+const UserDTO = require('../dto/UserDTO');
+
 class GetUsers {
     constructor(userRepository){
         this.userRepository = userRepository;
     }
 
     async execute() {
-        const users = await this.userRepository.getAll();
-        return users;
+        const data = await this.userRepository.getAll();
+        return data.map(item => UserDTO.response(item));
     }
 }
 

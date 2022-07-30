@@ -1,9 +1,13 @@
+require('dotenv').config();
+
 const ExpressAdapter = require("./infra/api/ExpressAdapter");
 const UserMemoryRepository = require("./infra/repository/UserMemoryRepository");
 const Router = require("./infra/api/Router");
+const UserSQLRepository = require("./infra/repository/UserSQLRepository");
 
 const httpServer = new ExpressAdapter();
-const userMemoryRepository = new UserMemoryRepository();
-const router = new Router(httpServer, userMemoryRepository);
+const userSQLRepository = new UserSQLRepository();
+
+const router = new Router(httpServer, userSQLRepository);
 router.init();
-httpServer.listen(3000);
+httpServer.listen(process.env.PORT || 3000);
