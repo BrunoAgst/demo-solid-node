@@ -10,7 +10,12 @@ class SQLAdapter {
     }
 
     query(queryString){
-        return this.connection.query(queryString);
+        try {
+            return this.connection.query(queryString);
+            
+        } catch (error) {
+            return error.message
+        }
     }
 
 }

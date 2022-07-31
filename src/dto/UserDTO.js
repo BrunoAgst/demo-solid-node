@@ -1,5 +1,7 @@
 class UserDTO {
-    response({ name, email, phone }){
+    response(paylaod){
+        const { name, email, phone } = paylaod;
+
         return {
             name,
             email,
@@ -8,4 +10,4 @@ class UserDTO {
     }
 }
 
-module.exports = new UserDTO()
+module.exports = new UserDTO();

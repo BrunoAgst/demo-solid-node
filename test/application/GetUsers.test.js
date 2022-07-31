@@ -7,8 +7,8 @@ describe("#GetUsers application", () => {
         const userRepository = {
             getAll: _jest.fn(() => {
                 return [
-                    {"name":"Bruno","password":"123456","email":"bruno@teste.com","phone":"11999992222"},
-                    {"name":"Ana","password":"123456","email":"ana@teste.com","phone":"11999992222"}
+                    {"name":"Bruno","pass":"123456","email":"bruno@teste.com","phone":"11999992222"},
+                    {"name":"Ana","pass":"123456","email":"ana@teste.com","phone":"11999992222"}
                 ]
             })
         };
@@ -16,13 +16,11 @@ describe("#GetUsers application", () => {
         const expected = [
             {
               name: 'Bruno',
-              password: '123456',
               email: 'bruno@teste.com',
               phone: '11999992222'
             },
             {
               name: 'Ana',
-              password: '123456',
               email: 'ana@teste.com',
               phone: '11999992222'
             }
