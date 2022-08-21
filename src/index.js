@@ -1,8 +1,11 @@
 require('dotenv').config();
 
 const ExpressAdapter = require("./infra/api/ExpressAdapter");
-const UserMemoryRepository = require("./infra/repository/UserMemoryRepository");
 const Router = require("./infra/api/Router");
+/*
+ Select your repository
+*/
+//const UserMemoryRepository = require("./infra/repository/UserMemoryRepository");
 const UserSQLRepository = require("./infra/repository/UserSQLRepository");
 
 const httpServer = new ExpressAdapter();
